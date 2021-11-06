@@ -18,7 +18,7 @@ class StartUpView extends StatelessWidget {
               children: <Widget>[
                 verticalSpaceMedium,
                 Text(
-                  'Aplikasi RT/RW',
+                  'Aplikasi Kelurahan',
                 ),
                 verticalSpaceSmall,
                 SizedBox(
