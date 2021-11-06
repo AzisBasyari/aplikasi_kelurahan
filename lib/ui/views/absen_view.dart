@@ -30,7 +30,7 @@ class _AbsenViewState extends State<AbsenView> {
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text('Report')
+          title: Text('Pelaporan')
         ),
         body: LoadingOverlay(
           isLoading: model.busy,
@@ -69,7 +69,7 @@ class _AbsenViewState extends State<AbsenView> {
                           ),
                           child: model.isPathNull() == false ? Center(
                             child: Text(
-                              "Tap",
+                              "Tap untuk mengambil foto",
                               style: TextStyle(
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.bold,
@@ -105,7 +105,7 @@ class _AbsenViewState extends State<AbsenView> {
                           margin: EdgeInsets.all(15.0),
                           child: DropdownButton(
                             isExpanded: true,
-                            hint: Text('Choose Report Type'),
+                            hint: Text('Pilih tipe pelaporan'),
                             value: model.selectionType,
                             items: model.reportType == null ? null : model.reportType.map(
                               (value){
@@ -129,7 +129,7 @@ class _AbsenViewState extends State<AbsenView> {
                       Visibility(
                         visible: model.isPathNull(),
                         child: Text(
-                          "Address",
+                          "Alamat",
                           style: absenNameTextStyle
                         ),
                       ),
@@ -148,7 +148,7 @@ class _AbsenViewState extends State<AbsenView> {
                       Visibility(
                         visible: model.isPathNull(),
                         child: Text(
-                          "Today's Activity",
+                          "Kegiatan Hari Ini: ",
                           style: absenNameTextStyle
                         )
                       ),
@@ -188,7 +188,7 @@ class _AbsenViewState extends State<AbsenView> {
                             model.sendMessages(context);
                           },
                           child: Text(
-                            "Submit Report",
+                            "Kirimkan Laporan",
                             style: textButtonTextStyle
                           )
                         )

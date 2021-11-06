@@ -58,7 +58,7 @@ class _ReportViewState extends State<ReportView> {
                             child: ListView.builder(
                               padding: EdgeInsets.only(
                                 top: 8.0,
-                                bottom: 8.0,
+                                bottom: 10.0,
                                 right: 4.0,
                                 left: 4.0
                               ),

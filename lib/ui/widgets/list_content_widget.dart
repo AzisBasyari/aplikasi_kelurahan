@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:project_workshop_kawal_desa/constants/const.dart';
 import 'package:flutter/material.dart';
+import 'package:project_workshop_kawal_desa/ui/shared/ui_helper.dart';
 
 class ListContentWidget extends StatelessWidget {
   const ListContentWidget({
@@ -63,42 +64,80 @@ class ListContentWidget extends StatelessWidget {
                             fontWeight: FontWeight.w600, fontSize: 15
                           )
                         ),
-                        flex: 2
+                        flex: 1
                       ),
                       //Memperbaiki icon null
-                      Container(
-                        width: 50,
-                        child: IconButton(
-                          onPressed:(){
-                            detailFunction;
-                          },
-                          color: Color(000000),
-                          icon: Icon(
-                            Icons.add,
-                            color: Color(0xffF8F8FA),
-                          ),
-                          iconSize: 20
-                        )
-                      )
+                      // Container(
+                      //   width: 30,
+                      //   child: IconButton(
+                      //     onPressed:(){
+                      //       detailFunction;
+                      //     },
+                      //     color: Colors.blue,
+                      //     icon: Icon(
+                      //       Icons.add,
+                      //       color: Colors.blue,
+                      //     ),
+                      //     iconSize: 30
+                      //   )
+                      // )
                     ]
                   ),
-                  Container(
-                    child:Text("$content", style: TextStyle(color: Colors.grey))
+                  Divider(
+                    height: 10,
+                    thickness: 2,
                   ),
-                  SizedBox(height: 7),
-                  Container(
-                    child: Text("$address", style:TextStyle(color:Colors.grey))
+                  Flexible(
+                    child: RichText(
+                      maxLines: 10,
+                      overflow: TextOverflow.ellipsis,
+                        text: TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: "Kegiatan: ",
+                                  style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold)
+                              ),
+                              TextSpan(
+                                  text: "$content",
+                                  style: TextStyle(color: Colors.grey)
+                              ),
+                            ],
+                        ),
+                    ),
+                  ),
+                  // SizedBox(height: 7),
+                  Divider(
+                    height: 10,
+                    thickness: 2,
+                  ),
+                  Flexible(
+                    child: RichText(
+                      maxLines: 5,
+                      overflow: TextOverflow.ellipsis,
+                      text: TextSpan(
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: "Alamat: ",
+                              style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold)
+                          ),
+                          TextSpan(
+                              text: "$address",
+                              style: TextStyle(color: Colors.grey)
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(height:24),
                   Text(
-                    "$name",
+                    "Oleh: " + "$name".toUpperCase(),
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(color: Colors.orange)
+                    style: TextStyle(color: Colors.blue)
                   ),
                   Align(
                     alignment: Alignment.bottomRight,
                     //FAICON diambil dari library FontAwesomeIcons
-                    child: (send=='pending')?FaIcon(FontAwesomeIcons.clock, size: 15, color: Colors.grey):FaIcon(FontAwesomeIcons.check, size:15, color:Colors.grey)
+                    child: (send=='pending')?FaIcon(FontAwesomeIcons.clock, size: 15, color: Colors.red):FaIcon(FontAwesomeIcons.check, size:15, color:Colors.green)
                   )
                 ]
               )

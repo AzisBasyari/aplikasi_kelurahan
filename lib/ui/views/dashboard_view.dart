@@ -37,14 +37,17 @@ class DashboardView extends StatelessWidget {
                   child: Container(
                     child: Column(
                       children: <Widget>[
-                        Material(
-                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                          elevation: 10,
-                          child: Image.asset("assets/icon.png", width: 100.0, height: 100.0,),
-                        ),
+                        // Material(
+                        //   borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                        //   elevation: 10,
+                        //   child: Image.asset("assets/icon.png", width: 100.0, height: 100.0,),
+                        // ),
                         Padding(padding: EdgeInsets.all(3.0)),
+                        SizedBox(
+                          height: 50.0,
+                        ),
                         Text(
-                          "${model.name}".toUpperCase(),
+                          "Hallo, ${model.name}!".toUpperCase(),
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,
@@ -71,22 +74,23 @@ class DashboardView extends StatelessWidget {
                   model.goAnotherView(ReportViewRoute);
                 },
               ),
-              ListTile(
-                title: Row(
-                  children: <Widget>[
-                    Icon(Icons.share_location),
-                    Padding(
-                      padding: EdgeInsets.only(left: 8.0),
-                      child: Text("Trajectory"),
-                    ),
-                  ],
-                ),
-                onTap: () {
-                  // Update the state of the app.
-                  // ...
-                  model.goAnotherView(TrajectoryViewRoute);
-                },
-              ),
+              //Untuk fitur trajectory
+              // ListTile(
+              //   title: Row(
+              //     children: <Widget>[
+              //       Icon(Icons.share_location),
+              //       Padding(
+              //         padding: EdgeInsets.only(left: 8.0),
+              //         child: Text("Trajectory"),
+              //       ),
+              //     ],
+              //   ),
+              //   onTap: () {
+              //     // Update the state of the app.
+              //     // ...
+              //     model.goAnotherView(TrajectoryViewRoute);
+              //   },
+              // ),
               Divider(
                 height: 1,
                 thickness: 1,
@@ -125,18 +129,18 @@ class DashboardView extends StatelessWidget {
                       title: Icon(
                         Icons.hail_rounded,
                         color: Colors.blue,
-                        size: 70.0,
+                        size: 100.0,
                       ),
                     ),
                     ListTile(
                       title: Center(
-                        child: Text("Hallo ${model.name}!\n".toUpperCase()),
+                        child: Text("Selamat Datang!\n".toUpperCase(),  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),),
                       ),
                       subtitle: Text(
-                          '\t\t\t\t\tSelamat datang di aplikasi RT/RW. Aplikasi ini memiliki dua fitur utama, yaitu fitur pelaporan dan fitur trajectory.'
-                              'Kedua fitur tersebut tersedia di menu sebelah kiri. Sebelum menggunakan fitur-fitur tersebut, '
+                          '\t\t\t\t\tSelamat datang di Aplikasi Kelurahan. Aplikasi ini memiliki fitur utama yaitu fitur pelaporan. '
+                              'Fitur tersebut tersedia di menu sebelah kiri. Sebelum menggunakan fitur tersebut, '
                               'silakan simak penjelasan mengenai fitur tersebut di bawah ini.',
-                          textAlign: TextAlign.justify,),
+                          textAlign: TextAlign.justify,  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),),
                     ),
                     // Divider(
                     //   height: 1,
@@ -144,19 +148,22 @@ class DashboardView extends StatelessWidget {
                     // ),
                     verticalSpaceMedium,
                     ListTile(
-                      title: Text("Fitur Pelaporan"),
+                      title: Text("Fitur Pelaporan", style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),),
                       subtitle: Text(
-                          '\t\t\t\t\tFitur pelaporan adalah fitur untuk anda melaporkan masalah atau pun sekadar melaporkan kegiatan harian'
-                              'baik yang dilakukan secara individu maupun berkelompok',
-                          textAlign: TextAlign.justify,),
+                          '\t\t\t\t\tFitur pelaporan adalah fitur untuk anda melakukan absensi dan juga melakukan pelaporan kegiatan harian anda. '
+                              'Tata cara menggunakan fitur pelaporan adalah buka menu fitur pelaporan, kemudian silakan tekan tombol tambah yang berada di kanan bawah. '
+                              'Setelah itu, tap pada kotak untuk mengambil foto. Selanjutnya akan ditampilkan foto yang telah diambil dan alamat pelaporan dilakukan dan isi tipe pelaporan yang dilakukan.'
+                              'Jangan lupa untuk mengisi kolom deskripsi kegiatan. Jika semua langkah sudah dijalankan, langkah terakhir adalah kirimkan laporan',
+                          textAlign: TextAlign.justify, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),),
                     ),
-                    verticalSpaceMedium,
-                    ListTile(
-                      title: Text("Fitur Trajectory"),
-                      subtitle: Text(
-                        '\t\t\t\t\tFitur Trajectory adalah fitur yang digunakan untuk memberikan tanda batas wilayah serta lahan milik warga',
-                        textAlign: TextAlign.justify,),
-                    ),
+                    //Untuk Fitur Trajectory
+                    // verticalSpaceMedium,
+                    // ListTile(
+                    //   title: Text("Fitur Trajectory"),
+                    //   subtitle: Text(
+                    //     '\t\t\t\t\tFitur Trajectory adalah fitur yang digunakan untuk memberikan tanda batas wilayah serta lahan milik warga',
+                    //     textAlign: TextAlign.justify,),
+                    // ),
                     verticalSpaceSmall,
                   ],
                 ),
