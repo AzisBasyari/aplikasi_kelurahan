@@ -1,0 +1,3 @@
+email: ziss@email
+password: ziss
+kode registrasi: 2WSC5

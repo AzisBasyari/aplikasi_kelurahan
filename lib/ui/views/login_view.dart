@@ -28,7 +28,7 @@ class LoginView extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         verticalSpaceMedium,
-                        Text("Aplikasi RT/RW", style: titleTextStyle,),
+                        Text("Aplikasi Kelurahan", style: titleTextStyle,),
                         verticalSpaceSmall,
                         Image.asset(
                           'assets/logo.png',
